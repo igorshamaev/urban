@@ -1,0 +1,7 @@
+my_string = input('Введите любой текст с пробелами:')
+print ('Количество символов в тексте:', len(my_string))
+print('Текст в верхнем регистре:', my_string.upper())
+print('Текст в нижнем регистре:', my_string.lower())
+my_string = my_string.replace(" ", "")
+print('Текст без пробелов:', my_string)
+print('Последний символ в тексте (пробелы не считаются):', my_string[-1])

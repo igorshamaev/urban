@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common.exceptions import TimeoutException
 from colorama import Fore
@@ -27,14 +27,13 @@ time.sleep(2)
 goods1 = 'Суккулент Сервер'
 goods2 = 'Кактус Кодинга'
 goods3 = 'Эко-Пиксель'
-# wait = WebDriverWait(driver, 2)
 
 click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[3]/a/div/div[1]/a')
 # element_to_click = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[1]/a/div/div[1]/a')
 click_fv.click()
 
 try:
-    bubble = WebDriverWait(driver, 2).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
+    bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
     print(f"Товар '{goods3}' добавлен в Избранное.")
 except TimeoutException:
     print(Fore.RED + f"Ошибка: Товар '{goods3}' не добавлен в Избранное.")

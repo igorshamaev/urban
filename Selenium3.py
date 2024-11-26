@@ -30,12 +30,38 @@ goods1 = 'Суккулент Сервер'
 goods2 = 'Кактус Кодинга'
 goods3 = 'Эко-Пиксель'
 
+# FV1
+click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[1]/a/div/div[1]/a')
+click_fv.click()
+
+try:
+    bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
+    print(f"Товар1 '{goods1}' добавлен в Избранное.")
+    print(Fore.GREEN + f"Тест1 пройден." + Fore.RESET)
+except TimeoutException:
+    print(Fore.RED + f"Ошибка: Товар1 '{goods1}' не добавлен в Избранное.")
+    print(Fore.RED + f"Тест1 не пройден." + Fore.RESET)
+
+# FV2
+time.sleep(6)
+click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[2]/a/div/div[1]/a')
+click_fv.click()
+
+try:
+    bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
+    print(f"Товар2 '{goods2}' добавлен в Избранное.")
+    print(Fore.GREEN + f"Тест2 пройден." + Fore.RESET)
+except TimeoutException:
+    print(Fore.RED + f"Ошибка: Товар2 '{goods2}' не добавлен в Избранное.")
+    print(Fore.RED + f"Тест2 не пройден." + Fore.RESET)
+
 # FV3
+time.sleep(6)
 click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[3]/a/div/div[1]/a')
 click_fv.click()
 
 try:
-    bubble = Wait(driver, 5).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
+    bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
     print(f"Товар3 '{goods3}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест3 пройден." + Fore.RESET)
 except TimeoutException:

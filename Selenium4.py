@@ -46,7 +46,7 @@ try:
     print(f"Товар1 '{goods1}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест1 пройден." + Style.RESET_ALL)
 except TimeoutException:
-    print(Fore.RED + f"Ошибка: Товар1 '{goods1}' не добавлен в Избранное.")
+    print(Fore.YELLOW + f"Ошибка: Товар1 '{goods1}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест1 не пройден." + Style.RESET_ALL)
 print()
 try:
@@ -54,7 +54,7 @@ try:
     print(f"Товар2 '{goods2}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест2 пройден." + Style.RESET_ALL)
 except TimeoutException:
-    print(Fore.RED + f"Ошибка: Товар2 '{goods2}' не добавлен в Избранное.")
+    print(Fore.YELLOW + f"Ошибка: Товар2 '{goods2}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест2 не пройден." + Style.RESET_ALL)
 print()
 try:
@@ -62,7 +62,7 @@ try:
     print(f"Товар3 '{goods3}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест3 пройден." + Style.RESET_ALL)
 except TimeoutException:
-    print(Fore.YELLOW + f"Ошибка: Товар3 '{goods3}' не добавлен в Избранное.")
+    print(Fore.YELLOW + f"Ошибка: Товар3 '{goods3}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест3 не пройден." + Style.RESET_ALL)
     # Close FV
     click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[1]/button')

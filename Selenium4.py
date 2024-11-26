@@ -1,5 +1,5 @@
 import time
-from colorama import Fore
+from colorama import Fore, Style
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -19,12 +19,12 @@ login_button = driver.find_element(By.XPATH, '//*[@id="page-auth-form"]/table/tb
 
 input_password.send_keys("_6-xm.dgTEO")
 login_button.send_keys(Keys.RETURN)
-time.sleep(3)
 
 goods1 = 'Суккулент Сервер'
 goods2 = 'Кактус Кодинга'
 goods3 = 'Эко-Пиксель'
 
+time.sleep(3)
 click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[1]/a/div/div[1]/a')
 click_fv.click() # FV1 click
 
@@ -44,26 +44,26 @@ print()
 try:
     bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')))
     print(f"Товар1 '{goods1}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест1 пройден." + Fore.RESET)
+    print(Fore.GREEN + f"Тест1 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.RED + f"Ошибка: Товар1 '{goods1}' не добавлен в Избранное.")
-    print(Fore.RED + f"Тест1 не пройден." + Fore.RESET)
+    print(Fore.RED + f"Тест1 не пройден." + Style.RESET_ALL)
 print()
 try:
     bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[2]')))
     print(f"Товар2 '{goods2}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест2 пройден." + Fore.RESET)
+    print(Fore.GREEN + f"Тест2 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.RED + f"Ошибка: Товар2 '{goods2}' не добавлен в Избранное.")
-    print(Fore.RED + f"Тест2 не пройден." + Fore.RESET)
+    print(Fore.RED + f"Тест2 не пройден." + Style.RESET_ALL)
 print()
 try:
     bubble = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[3]')))
     print(f"Товар3 '{goods3}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест3 пройден." + Fore.RESET)
+    print(Fore.GREEN + f"Тест3 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.YELLOW + f"Ошибка: Товар3 '{goods3}' не добавлен в Избранное.")
-    print(Fore.RED + f"Тест3 не пройден." + Fore.RESET)
+    print(Fore.RED + f"Тест3 не пройден." + Style.RESET_ALL)
     # Close FV
     click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[1]/button')
     click_fv.click() # Close_FV_list click

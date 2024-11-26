@@ -37,10 +37,10 @@ click_fv.click()
 try:
     bubble = Wait(driver, 5).until(ec.presence_of_element_located((By.CLASS_NAME, 't1002__bubble-container')))
     print(f"Товар3 '{goods3}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест3 пройден." + Fore.RESET)
+    print(Fore.GREEN + f"Тест3 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.RED + f"Ошибка: Товар3 '{goods3}' не добавлен в Избранное.")
-    print(Fore.RED + f"Тест3 не пройден." + Fore.RESET)
+    print(Fore.RED + f"Тест3 не пройден." + Style.RESET_ALL)
 
 finally:
     time.sleep(6)

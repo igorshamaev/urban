@@ -20,7 +20,7 @@ login_button = driver.find_element(By.XPATH, '//*[@id="page-auth-form"]/table/tb
 input_password.send_keys("_6-xm.dgTEO")
 login_button.send_keys(Keys.RETURN)
 
-goods = ['Суккулент Сервер', 'Кактус Кодинга', 'Эко-Пиксель']
+goods = ['Суккулент "Сервер"', 'Кактус Кодинга', 'Эко-Пиксель']
 
 time.sleep(8)
 click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[1]/a/div/div[1]/a')

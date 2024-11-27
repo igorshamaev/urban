@@ -40,7 +40,7 @@ click_fv.click() # FV_list_open click
 
 print('-----------------------------------------------------')
 try:
-    added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')))
+    find_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')))
     print(f"Товар1 '{goods[0]}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест1.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
@@ -48,7 +48,7 @@ except TimeoutException:
     print(Fore.RED + f"Тест1.1 не пройден." + Style.RESET_ALL)
 print('-----------------------------------------------------')
 try:
-    added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[2]')))
+    find_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[2]')))
     print(f"Товар2 '{goods[1]}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест2.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
@@ -56,7 +56,7 @@ except TimeoutException:
     print(Fore.RED + f"Тест2.1 не пройден." + Style.RESET_ALL)
 print('-----------------------------------------------------')
 try:
-    added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[3]')))
+    find_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[3]')))
     print(f"Товар3 '{goods[2]}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест3.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
@@ -65,8 +65,8 @@ except TimeoutException:
 print('-----------------------------------------------------')
 time.sleep(3)
 try:
-    click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]/div[4]/img')
-    click_fv.click()  # Remove FV1 click
+    remove_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]/div[4]/img')
+    remove_fv.click()  # Remove FV1 click
     time.sleep(3)
     driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')
     print(Fore.YELLOW + f"Ошибка: Товар1 '{goods[0]}' не удалён из Избранного!")
@@ -75,8 +75,8 @@ except NoSuchElementException:
     print(f"Товар1 '{goods[0]}' удалён из Избранного.")
     print(Fore.GREEN + f"Тест1.2 пройден." + Style.RESET_ALL)
 
-    click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[1]/button')
-    click_fv.click() # Close_FV_list click
+    close_fv_list = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[1]/button')
+    close_fv_list.click() # Close_fv_list click
 
 finally:
     time.sleep(2)

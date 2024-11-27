@@ -44,7 +44,7 @@ print('-----------------------------------------------------')
 try:
     added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')))
     print(f"Товар1 '{goods1}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест1 пройден." + Style.RESET_ALL)
+    print(Fore.GREEN + f"Тест1.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.YELLOW + f"Ошибка: Товар1 '{goods1}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест1.1 не пройден." + Style.RESET_ALL)
@@ -52,7 +52,7 @@ print('-----------------------------------------------------')
 try:
     added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[2]')))
     print(f"Товар2 '{goods2}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест2 пройден." + Style.RESET_ALL)
+    print(Fore.GREEN + f"Тест2.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.YELLOW + f"Ошибка: Товар2 '{goods2}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест2.1 не пройден." + Style.RESET_ALL)
@@ -60,7 +60,7 @@ print('-----------------------------------------------------')
 try:
     added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[3]')))
     print(f"Товар3 '{goods3}' добавлен в Избранное.")
-    print(Fore.GREEN + f"Тест3 пройден." + Style.RESET_ALL)
+    print(Fore.GREEN + f"Тест3.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
     print(Fore.YELLOW + f"Ошибка: Товар3 '{goods3}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест3.1 не пройден." + Style.RESET_ALL)

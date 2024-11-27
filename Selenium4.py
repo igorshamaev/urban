@@ -20,9 +20,7 @@ login_button = driver.find_element(By.XPATH, '//*[@id="page-auth-form"]/table/tb
 input_password.send_keys("_6-xm.dgTEO")
 login_button.send_keys(Keys.RETURN)
 
-goods1 = 'Суккулент Сервер'
-goods2 = 'Кактус Кодинга'
-goods3 = 'Эко-Пиксель'
+goods = ['Суккулент Сервер', 'Кактус Кодинга', 'Эко-Пиксель']
 
 time.sleep(8)
 click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117022"]/div/div[1]/div[1]/a/div/div[1]/a')
@@ -43,38 +41,38 @@ click_fv.click() # FV_list_open click
 print('-----------------------------------------------------')
 try:
     added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')))
-    print(f"Товар1 '{goods1}' добавлен в Избранное.")
+    print(f"Товар1 '{goods[0]}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест1.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
-    print(Fore.YELLOW + f"Ошибка: Товар1 '{goods1}' не добавлен в Избранное!")
+    print(Fore.YELLOW + f"Ошибка: Товар1 '{goods[0]}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест1.1 не пройден." + Style.RESET_ALL)
 print('-----------------------------------------------------')
 try:
     added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[2]')))
-    print(f"Товар2 '{goods2}' добавлен в Избранное.")
+    print(f"Товар2 '{goods[1]}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест2.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
-    print(Fore.YELLOW + f"Ошибка: Товар2 '{goods2}' не добавлен в Избранное!")
+    print(Fore.YELLOW + f"Ошибка: Товар2 '{goods[1]}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест2.1 не пройден." + Style.RESET_ALL)
 print('-----------------------------------------------------')
 try:
     added_fv = Wait(driver, 2).until(ec.presence_of_element_located((By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[3]')))
-    print(f"Товар3 '{goods3}' добавлен в Избранное.")
+    print(f"Товар3 '{goods[2]}' добавлен в Избранное.")
     print(Fore.GREEN + f"Тест3.1 пройден." + Style.RESET_ALL)
 except TimeoutException:
-    print(Fore.YELLOW + f"Ошибка: Товар3 '{goods3}' не добавлен в Избранное!")
+    print(Fore.YELLOW + f"Ошибка: Товар3 '{goods[2]}' не добавлен в Избранное!")
     print(Fore.RED + f"Тест3.1 не пройден." + Style.RESET_ALL)
 print('-----------------------------------------------------')
-time.sleep(5)
+time.sleep(3)
 try:
     click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]/div[4]/img')
     click_fv.click()  # Remove FV1 click
-    time.sleep(5)
+    time.sleep(3)
     driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[3]/div[1]')
-    print(Fore.YELLOW + f"Ошибка: Товар1 '{goods1}' не удалён из Избранного!")
+    print(Fore.YELLOW + f"Ошибка: Товар1 '{goods[0]}' не удалён из Избранного!")
     print(Fore.RED + f"Тест1.2 не пройден." + Style.RESET_ALL)
 except NoSuchElementException:
-    print(f"Товар1 '{goods1}' удалён из Избранного.")
+    print(f"Товар1 '{goods[0]}' удалён из Избранного.")
     print(Fore.GREEN + f"Тест1.2 пройден." + Style.RESET_ALL)
 
     click_fv = driver.find_element(By.XPATH, '//*[@id="rec634117498"]/div/div[2]/div/div[1]/button')
